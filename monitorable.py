@@ -122,7 +122,10 @@ resources = Resources()
 alarms = Alarms()
 
 # Get terminal size
-rows, columns = os.popen('stty size', 'r').read().split()
+try:
+    rows, columns = os.popen('stty size', 'r').read().split()
+except:
+    columns = 50
 print('=' * int(columns))
 
 
